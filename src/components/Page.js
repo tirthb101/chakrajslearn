@@ -92,7 +92,7 @@ function Page () {
                     <HStack justifyContent='space-between' width='full'>
                         <HStack padding={0} spacing={1}>
                             <AspectRatio ratio={1} w={20}>
-                                <Img href="www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&psig=AOvVaw0DyottdOy5oQgPWoKt-N2p&ust=1646051555581000&source=images&cd=vfe&ved=2ahUKEwjI96SD8p_2AhUF0nMBHaRyDv8QjRx6BAgAEAk"/>
+                                <Img src='favicon.ico' /> 
                             </AspectRatio>
                             <VStack alignItems='flex-start' padding={0} spacing={2}>
                                 <Heading>Penny board</Heading>
@@ -102,21 +102,21 @@ function Page () {
                         <Heading size='sm'>$119.00</Heading>
                     </HStack>
                     <HStack justifyContent='space-between' width='full'>
-                        <Text></Text>
+                        <Text>Shiping</Text>
                         <Heading size='sm'></Heading>
                     </HStack>
                     <HStack justifyContent='space-between' width='full'>
-                        <Text></Text>
-                        <Heading size='sm'></Heading>
+                        <Text>Price</Text>
+                        <Heading size='sm'>$119.00</Heading>
                     </HStack>
                     <HStack justifyContent='space-between' width='full'>
-                        <Text></Text>
-                        <Heading size='sm'></Heading>
+                        <Text>Taxes (estimated)</Text>
+                        <Heading size='sm'>$119.00</Heading>
                     </HStack>
-                    <Divider height='0.7' bgColor='blackAlpha.500' />
+                    <Divider height='0.7' bgColor='blackAlpha.400' />
                     <HStack justifyContent='space-between' width='full'>
-                        <Text></Text>
-                        <Heading size='sm'></Heading>
+                        <Text>Subtotal</Text>
+                        <Heading size='sm'>$119.00</Heading>
                     </HStack>
                 </VStack>
             </Flex>
