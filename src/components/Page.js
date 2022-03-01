@@ -16,13 +16,19 @@ import {
     HStack,
     Divider,
     AspectRatio,
-    Img
+    Img,
+    useColorMode,
+    useColorModeValue,
+    useBreakpointValue
 } from '@chakra-ui/react';
 
 function Page () {
+    const { toggleColorMode } = useColorMode();
+    const bgColor = useColorModeValue('gray.200', 'whiteAlpha.50');
+    const colSpan = useBreakpointValue({base: 2, md: 1})
     return (
         <Container maxWidth='container.xl' padding={0}>
-            <Flex height='100vh' paddingY={10}>
+            <Flex height={{'base': 'auto', 'md':'100vh'}} paddingY={{'base': 0, 'md': 10}} direction={{'base':'column-reverse', 'md':'row'}}>
                 <VStack
                 spacing={10}
                 padding={10}
@@ -34,13 +40,13 @@ function Page () {
                         <Text>Click here if you already have a acount</Text>
                     </VStack>
                 <SimpleGrid columns={2} columnGap={3} rowGap={6}>
-                    <GridItem colSpan={1}>
+                    <GridItem colSpan={colSpan}>
                         <FormControl>
                             <FormLabel>First name</FormLabel>
                                 <Input placeholder="First name"/>
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={1}>
+                    <GridItem colSpan={colSpan}>
                         <FormControl>
                             <FormLabel>Last name</FormLabel>
                                 <Input placeholder="Last name"/>
@@ -52,13 +58,13 @@ function Page () {
                                 <Input placeholder="Adress"/>
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={1}>
+                    <GridItem colSpan={colSpan}>
                         <FormControl>
                             <FormLabel>City</FormLabel>
                                 <Input placeholder="City"/>
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={1}>
+                    <GridItem colSpan={colSpan}>
                         <FormControl>
                             <FormLabel>Country</FormLabel>
                                 <Select>
@@ -72,7 +78,7 @@ function Page () {
                         <Checkbox defaultChecked>Ship to the billing address</Checkbox>
                     </GridItem>
                     <GridItem colSpan={2}>
-                        <Button size='lg' width='full'>Place order</Button>
+                        <Button variant='primary' size='lg' width='full'>Place order</Button>
                     </GridItem>
                 </SimpleGrid>
                 
@@ -80,21 +86,21 @@ function Page () {
                 <VStack
                 spacing={10}
                 padding={10}
-                bgColor='gray.200'
+                bgColor={bgColor}
                 w='full'
                 h='full'
                 alignItems='flex-start'>
                     <VStack spacing={2} alignItems='flex-start'>
                         <Heading size='2xl'>Your cart</Heading>
-                        <Text>You can change the price by<br></br><Button variant='link'>Clicking here</Button></Text>
+                        <Text>You can change the price by<br></br><Button variant='link' onClick={toggleColorMode}>Clicking here</Button></Text>
                         
                     </VStack>
                     <HStack justifyContent='space-between' width='full'>
-                        <HStack padding={0} spacing={1}>
+                        <HStack padding={0} spacing={3}>
                             <AspectRatio ratio={1} w={20}>
                                 <Img src='favicon.ico' /> 
                             </AspectRatio>
-                            <VStack alignItems='flex-start' padding={0} spacing={2}>
+                            <VStack alignItems='flex-start' padding={0} spacing={0}>
                                 <Heading>Penny board</Heading>
                                 <Text>uh382213sd</Text>
                             </VStack>
@@ -116,7 +122,7 @@ function Page () {
                     <Divider height='0.7' bgColor='blackAlpha.400' />
                     <HStack justifyContent='space-between' width='full'>
                         <Text>Subtotal</Text>
-                        <Heading size='sm'>$119.00</Heading>
+                        <Heading size='md'>$119.00</Heading>
                     </HStack>
                 </VStack>
             </Flex>
